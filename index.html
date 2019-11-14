@@ -1,5 +1,41 @@
 <html>
-<body>
-<h1>Temp</h1>
-</body>
+	<head>
+		<title>Stuff and Cats</title>
+		<style>
+			/* 	https://css-tricks.com/perfect-full-page-background-image/ */
+
+			img.bg {
+				/* Set rules to fill background */
+				min-height: 100%;
+				min-width: 1024px;
+				
+				/* Set up proportionate scaling */
+				width: 100%;
+				height: auto;
+				
+				/* Set up positioning */
+				position: fixed;
+				top: 0;
+				left: 0;
+			}
+
+			#ui {
+				position: absolute;
+				top: 30px;
+				left: 30px;
+			}
+		</style>
+	</head>
+	<body>
+
+		<div id="app">
+				<img class="bg" :src="currentImage" v-if="currentImage">
+				<div id="ui">
+				<input v-model="term" type="search"> <button @click="search" :disabled="!term">Search</button>
+				</div>
+		</div>
+
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<script src="app.js"></script>
+	</body>
 </htm>
